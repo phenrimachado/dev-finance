@@ -1,0 +1,310 @@
+/* Global */
+
+:root {
+  --dark-blue: #363F5F;
+  --green: #49AA26;
+  --light-green: #3DD705;
+  --red: #E92929;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 93.75%;
+}
+
+body {
+  background: #F0F2F5;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Title */
+
+h2 { 
+  font-weight: 400;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  color: var(--dark-blue);
+}
+
+/* Links & Buttons */
+
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--light-green);
+}
+
+.button.new {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.button.remove {
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+
+  background: var(--green);
+  color: #FFF;
+
+  border: none;
+  border-radius: 0.25rem;
+
+  cursor: pointer;
+  transition: 100ms;
+}
+
+button:hover {
+  background: var(--light-green);
+}
+
+.button.cancel {
+  width: 100%;
+  height: 50px;
+
+  color: var(--red);
+
+  border: solid 1px var(--red);
+  border-radius: 0.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: 100ms;
+}
+
+.button.cancel:hover {
+  opacity: 1;
+}
+
+/* Header */
+
+header {
+  background: #2D4A22;
+  padding: 2rem 0 10rem;
+  text-align: center;
+}
+
+header img {
+  margin-top: 1rem;
+}
+
+/* Main */
+
+.container {
+  width: min(90vw, 800px);
+  margin: auto;
+}
+
+/* Balance */
+
+#balance {
+  margin-top: -6rem;
+}
+
+#balance h2 {
+  color: #FFF;
+  margin-top: 0;
+}
+
+/* Cards */
+
+.card {
+  background: #FFF;
+  color: var(--dark-blue);
+
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+
+  border-radius: 0.25rem;
+}
+
+.card.total {
+  background: #49AA26;
+  color: #FFF;
+}
+
+.card h3 {
+  display: flex;
+  font-size: 1rem;
+  font-weight: 400;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card p {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+/* Transaction */
+
+#transaction {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+/* Table */ 
+
+#data-table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  color: #969CB3;
+}
+
+#data-table thead tr th:first-child,
+#data-table tbody tr td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+#data-table th {
+  background: #FFF;
+  padding: 1rem 2rem;
+  text-align: left;
+  font-weight: 400;
+}
+
+#data-table tr {
+  opacity: 0.7;
+}
+
+#data-table tr:hover{
+  opacity: 1;
+}
+
+#data-table td {
+  background: #FFF;
+  padding: 1rem 2rem;
+}
+
+#data-table td.expense {
+  color: #E92929;
+}
+
+#data-table td.income {
+  color: #12A454;
+}
+
+#data-table td.description {
+  color: var(--dark-blue);
+}
+
+/* Modal */
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+
+  width: 100%;
+  height: 100%;
+  
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: #F0F2F5;
+  padding: 2.4rem;
+}
+
+/* Modal form */ 
+
+#form {
+  max-width: 500px;
+  width: 90%;
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+.input-group {
+  margin-top: 1rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.input-group small {
+  display: inline-block;
+  margin-top: 0.8rem;
+  opacity: 0.6;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+  width: 48%;
+}
+
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  
+  color: #969CB3;
+}
+
+/* Responsive */ 
+
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
